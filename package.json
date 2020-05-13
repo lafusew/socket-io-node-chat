@@ -1,0 +1,17 @@
+{
+  "name": "com-oddoz-nodechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node server.js --watch",
+    "start": "node server.js"
+  },
+  "author": "Antoine Oddoz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

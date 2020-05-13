@@ -1,0 +1,49 @@
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+
+    form {
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        border-radius: 10px;
+
+
+        input {
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            border: none;
+            padding: 10px;
+            background-color: rgb(255, 153, 207);
+        }
+    }
+
+    #conversation {
+        margin: 10px;
+        padding: 0;
+        height: calc(100% - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        li {
+            padding: 5px 10px;
+            width: max-content;
+
+            &:nth-child(odd) {
+                background-color: rgb(132, 224, 255);
+            }
+        }
+    }
+}
