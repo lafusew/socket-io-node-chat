@@ -54,13 +54,14 @@ function commandHandler(tempMsgArray) {
     //tempMsgArray est le tableau des mots de l'input de command
     switch (tempMsgArray[0]) {
         case '/setcolor':
-            msgColor = tempMsgArray[1];
+            msgColor = tempMsgArray[1].toLowerCase();
             consoleDisplay('setcolor');
             break;
         case '/setname':
-            if (tempMsgArray.lenght > 2) {
-                //ce code de se run jamais tempMsgArray.lenght est undefined
+            if (tempMsgArray !== 2) {
+                consoleDisplay('wrongname')
             } else {
+                console.log(tempMsgArray)
                 username = tempMsgArray[1];
                 consoleDisplay('setname')
             }
@@ -94,6 +95,11 @@ function consoleDisplay(error) {
             bgColor = 'red';
             color = 'white';
             consoleMsg = `You'll be called ${username}`;
+            break;
+        case 'setname':
+            bgColor = 'red';
+            color = 'white';
+            consoleMsg = `Username invalid, u can't use spaces`;
             break;
         case 'help':
             bgColor = 'red';
