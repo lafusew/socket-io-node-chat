@@ -58,7 +58,7 @@ function commandHandler(tempMsgArray) {
             consoleDisplay('setcolor');
             break;
         case '/setname':
-            if (tempMsgArray !== 2) {
+            if (tempMsgArray.length !== 2) {
                 consoleDisplay('wrongname')
             } else {
                 console.log(tempMsgArray)
