@@ -2,30 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet"
-          href="/style.min.css">
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet">
+      <link rel="stylesheet"
+            href="/style.min.css">
 
-    <title>Document</title>
+      <title>first-node-chat</title>
 </head>
 
 <body>
-    <ul id="conversation">
+      <div id="conversationContainer">
+            <ul id="conversation">
+            </ul>
+      </div>
+      <form id="chatForm"
+            action="">
+            <input type="text"
+                   id="message"
+                   autocomplete="off" />
 
-    </ul>
-    <form action="">
-        <input type="text"
-               id="message"
-               autocomplete="off" />
-
-        <button>Envoyer</button>
-    </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/client.js"></script>
+            <button id="sendButton">Envoyer</button>
+      </form>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/client.js"></script>
 
 </body>
 

@@ -30,25 +30,21 @@ app.get('/style.min.css.map', function (req, res) {
 app.get('/client.js', function (req, res) {
         res.sendFile(__dirname + '/client.js');
     })
-
     //comme app renvooie app on peut chainer les get (on pourrait utiliser)
-    .get('/contact', function (req, res) {
-        res.setHeader('Content-Type', 'text/plain');
-        res.send(`Page de contact`)
-    })
     //dernier appel on fait un use 
     .use(function (req, res, next) {
         res.setHeader('Content-Type', 'text/plain');
         res.status(404)
         res.send(`Page not found`);
     });
-
+//on utilise io.pour run tout ça lorsqu'un utilisateur se connecte
 io.on('connection', function (socket) {
     console.log('an uuser connected')
-
-    socket.on('chat message', function (msg) {
-        console.log(msg);
-        io.emit('chat message', msg)
+    //on utilise socket.on comme event listener sur le socket avec le client
+    socket.on('chat message', function (msg, username, msgColor, id) {
+        console.log(`msg from ${id}`);
+        //on emit globalement le chat message en passant tout les arguments récupéré du client pour les autres
+        io.emit('chat message', msg, username, msgColor)
     });
 
     socket.on('disconnect', function () {
@@ -56,6 +52,7 @@ io.on('connection', function (socket) {
     });
 });
 
+//on ecoute un certain port
 server.listen(port)
 
 
